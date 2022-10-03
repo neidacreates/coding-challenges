@@ -1,2 +1,2 @@
 # Code Wars Solutions
-JavaScript Solutions for Code Wars Challenges (codewars.com)
+Solutions for Code Wars Challenges (codewars.com) completed in JavaScript and Python
