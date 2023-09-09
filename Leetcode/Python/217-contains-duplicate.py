@@ -26,7 +26,9 @@ class Solution:
             if frequency > 1:
                 return True
         return False
-    
+
+# sample solutions
+
 class Solution(object):
     def containsDuplicate(self, nums):
         num_set = set()
@@ -35,4 +37,14 @@ class Solution(object):
                 return True
             else:
                 num_set.add(i)
+        return False
+
+class Solution:
+    def containsDuplicate(self, nums: list[int]) -> bool:
+        hashset = set()
+
+        for n in nums:
+            if n in hashset:
+                return True
+            hashset.add(n)
         return False
