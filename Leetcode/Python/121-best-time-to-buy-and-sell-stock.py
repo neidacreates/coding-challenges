@@ -26,6 +26,14 @@ Constraints:
     0 <= prices[i] <= 104
 
 '''
+# APPROACH
+# two pointers
+# make a left and right pointer, set left to 0 and right to 1
+# set profit to 0
+# the right pointer moves faster than the left
+# left pointer only moves if the left value is greater than the right, but right keeps moving every round, to check the next number until the end of the list
+# every time the right moves, before it does, set profit to greatest value
+# if we found a smaller value on the right, left pointer will move to become that value
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         left, right = 0, 1

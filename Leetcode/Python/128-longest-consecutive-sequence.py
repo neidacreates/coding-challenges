@@ -20,6 +20,15 @@ Constraints:
 0 <= nums.length <= 105
 -109 <= nums[i] <= 109
 '''
+# APPROACH
+# make set to get rid of duplicates
+# variable to store the longest sequence set to 0
+# iterate through the set
+# check if the current number is the start of a sequence by checking is number - 1 is there
+# if it is the start, set the length to 1 (length is a varaible to store the length of a sequence as we iterate)
+# keep increasing length as long as the following numbers are in the set (number + length)
+# set longest to length if length is greater
+# return longest 
 class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:
         # make a set out of the list of nums to ge rid of duplicates
