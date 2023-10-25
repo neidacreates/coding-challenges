@@ -45,6 +45,7 @@ class Solution:
         answer = []
         left = 0
         right = len(numbers) - 1
+        # while left < right is there isn't only one answer as stated in problem
         while len(answer) == 0:
             result = numbers[left] + numbers[right]
             if  result == target:
