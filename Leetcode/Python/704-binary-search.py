@@ -43,4 +43,35 @@ def search(nums, target):
             low = middle+1
     return -1
 
+# RECURSIVE SOLUTION
+def search(nums, target):
+    if len(nums) == 1:
+        return 0 if nums[0] == target else -1
+    half = len(nums) // 2
+    if nums[half] > target:
+        result = search(nums[:half], target)
+        return result + half if result != -1 else -1
+    elif nums[half] < target:
+        result = search(nums[half:], target)
+        return result
+    else:
+        return half
+
+# SAMPLE SOLUTION 
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        l, r = 0, len(nums) - 1
+
+        while l <= r:
+            m = l + ((r - l) // 2)  # (l + r) // 2 can lead to overflow
+            if nums[m] > target:
+                r = m - 1
+            elif nums[m] < target:
+                l = m + 1
+            else:
+                return m
+        return -1
+
+
+
 
