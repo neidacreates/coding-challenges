@@ -29,7 +29,7 @@ Constraints:
     1 <= arr[i] <= 10^5
 
 '''
-# Works for small arrays
+# Works for small arrays, exceeds time limit with large arrays 
 class Solution:
     def replaceElements(self, arr: List[int]) -> List[int]:
         if not arr or len(arr) == 1:
@@ -40,4 +40,20 @@ class Solution:
                 arr[index] = -1
             else:
                 arr[index] = max(arr[index+1:])
+        return arr
+    
+# SAMPLE SOLUTION
+# set the maximum number to the right to a placeholder variable (A = -1)
+# loop through the array backwards
+# set a new max value variable (B) to whatever is greater, the placeholder A or the current item we are on (B = max(A, arr[i]))
+# set the current value to A
+# then change A to B
+# return the changed array
+class Solution:
+    def replaceElements(self, arr: List[int]) -> List[int]:
+        rightMax = -1
+        for i in range(len(arr) -1, -1, -1):
+            newMax = max(rightMax, arr[i])
+            arr[i] = rightMax
+            rightMax = newMax
         return arr
